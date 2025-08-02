@@ -1,7 +1,6 @@
 import { createSlice, nanoid } from "@reduxjs/toolkit";
 import type { Layout } from "react-grid-layout";
 import type { PayloadAction } from "@reduxjs/toolkit";
-import type { ChartData } from "recharts/types/state/chartDataSlice";
 // --- Types ---
 export type WidgetType = "table" | "chart";
 export type ChartType = "bar" | "line" | "pie";

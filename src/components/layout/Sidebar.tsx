@@ -1,6 +1,6 @@
 // src/components/layout/Sidebar.tsx
 import { Button } from "@/components/ui/button";
-import { PlusCircle, Table2, BarChart3, Paintbrush2, Trash2 } from "lucide-react";
+import {  Table2, BarChart3, Paintbrush2, Trash2 } from "lucide-react";
 import { useDispatch } from "react-redux";
 import { useState } from "react";
 import { addWidget, clearWidgets } from "@/redux/widgetsSlice";
