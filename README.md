@@ -71,7 +71,7 @@ You can easily plug in these features without rewriting core logic.
 
 Here's a preview of the Dashboard Builder interface:
 
-![Dashboard Screenshot](src/assets/SS.png)
+![Dashboard Screenshot](src/assets/1SS.png)
 
 
 
