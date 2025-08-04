@@ -1,7 +1,6 @@
 import { useDispatch } from "react-redux";
 import {
   updateChartRow,
-  updateChartType,
   addChartRow,
   removeChartRow,
 } from "@/redux/widgetsSlice";

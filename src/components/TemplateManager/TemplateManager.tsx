@@ -22,7 +22,7 @@ import { Button } from "@/components/ui/button";
 import { Save, ChevronDown, Trash2 } from "lucide-react";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { loadWidgets, saveWidgetsToStorage } from "@/redux/widgetsSlice";
+import { loadWidgets } from "@/redux/widgetsSlice";
 import type { RootState } from "@/redux/store";
 
 const TEMPLATE_KEY = "dashboard_templates";

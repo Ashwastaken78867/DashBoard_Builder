@@ -17,7 +17,6 @@ export default function Canvas() {
   const containerRef = useRef<HTMLDivElement>(null); // 👈 add this
   const widgets = useSelector((state: RootState) => state.widgets.widgets);
   const layouts = useSelector((state: RootState) => state.widgets.layouts);
-  const selectedWidgetId = useSelector((state: RootState) => state.widgets.selectedWidgetId);
   const dispatch = useDispatch();
 
   const handleLayoutChange = (currentLayout: Layout[]) => {

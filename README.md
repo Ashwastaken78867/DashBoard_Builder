@@ -4,7 +4,7 @@
 
 The Collaborative Dashboard Builder is a dynamic web application designed to help users **create and customize dashboards** with charts and tables using a drag-and-drop interface. This tool mimics the functionality of modern SaaS platforms like **Retool**, **Metabase**, and **Power BI**, offering a simplified, intuitive user experience.
 
-This demo project was built as part of an assignment and focuses on **functionality, design**, and **extensibility**, while skipping complex features like authentication and real-time collaboration for now.
+This demo project was developed for a DelightLoop assignment, focusing on **functionality, design**, and **extensibility**, while skipping complex features like authentication and real-time collaboration for now.
 
 ---
 
@@ -35,7 +35,7 @@ This demo project was built as part of an assignment and focuses on **functional
 - ⚙️ Click widgets to open a settings panel
 - 📊 Editable chart data (bar, line, pie)
 - 🗃 Editable table data
-- 💾 Canvas export as PNG
+- 💾 Export dashboard canvas as downloadable PNG image
 - 💻 Responsive layout with grid snapping
 
 ---
@@ -55,13 +55,13 @@ We focused on building a **modular, scalable** architecture using industry stand
 
 This app is structured to be highly extensible:
 
-| Feature                    | Current | Scalable With |
-|---------------------------|---------|-----------------------------|
-| User Authentication       | ❌      | Add Firebase/Auth0          |
-| Dashboard Save/Load       | 🔜 LocalStorage | Add backend (MongoDB/Firebase) |
-| Real-time Collaboration   | ❌      | Integrate WebSockets (e.g. Socket.io) |
-| Multi-user dashboards     | ❌      | Add login + user-level data |
-| Export to PDF             | ❌      | Add `jspdf` or server render |
+| Feature                    | Current           | Scalable With                      |
+|---------------------------|-------------------|------------------------------------|
+| User Authentication       | ❌                | Add Firebase/Auth0                 |
+| Dashboard Save/Load       | 🔜 LocalStorage   | Add backend (MongoDB/Firebase)     |
+| Real-time Collaboration   | ❌                | Integrate WebSockets (e.g. Socket.io) |
+| Multi-user dashboards     | ❌                | Add login + user-level data        |
+| Export to PDF             | ❌                | Add `jspdf` or server render       |
 
 You can easily plug in these features without rewriting core logic.
 
@@ -73,10 +73,12 @@ Here's a quick look at the Dashboard Builder in action:
 
 ![Dashboard Screenshot](src/assets/SS2.png)
 
+---
 
+## 🔗 Links
 
-
-🟢 The goal was to replicate a simplified version of professional dashboards using modern tooling in a short time.
+- 🔗 [Live Demo](https://dashboard-builder-seven.vercel.app)
+- 💻 [GitHub Repo](https://github.com/Ashwastaken78867/DashBoard_Builder)
 
 ---
 
@@ -90,5 +92,8 @@ Built independently by **Ash Bagda** as part of a DelightLoop assignment.
 
 If you'd like to explore how this can be scaled for production use (e.g., multi-user dashboards, backend sync, or live collaboration), feel free to connect!
 
+---
 
+## 🧠 Skills
 
+**React**, **Redux Toolkit**, **TypeScript**, **Tailwind CSS**, **ShadCN UI**, **Recharts**, **react-grid-layout**, **Dashboard Design**
