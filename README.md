@@ -21,14 +21,7 @@ This demo project was built as part of an assignment and focuses on **functional
 
 ---
 
-## 🧠 Architecture & Folder Structure
-
-src/
-├── components/ # UI components (Sidebar, Canvas, Widgets)
-├── redux/ # Redux Toolkit slices (widget state)
-├── widgets/ # Widget types: ChartWidget, TableWidget
-├── utils/ # Utility functions (e.g. image export)
-└── App.tsx # Main app entry
+## 🧠 Architecture 
 
 - **Redux Toolkit** manages all widget data, settings, and layout state.
 - **react-grid-layout** enables responsive drag-and-drop layout for dashboard customization.
@@ -74,12 +67,10 @@ You can easily plug in these features without rewriting core logic.
 
 ---
 
-## 📸 Demo Preview
+## 📸 Image Preview
 
-> The UI is inspired by modern SaaS dashboard tools. A short demo video walks through:
-> - Adding widgets
-> - Editing content
-> - Exporting the dashboard
+> The UI is inspired by modern SaaS dashboard tools. A image of the UI:
+
 
 🟢 The goal was to replicate a simplified version of professional dashboards using modern tooling in a short time.
 
