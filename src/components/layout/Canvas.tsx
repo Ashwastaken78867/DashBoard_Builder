@@ -1,67 +1,61 @@
 // src/components/layout/Canvas.tsx
+import { useRef } from "react";
 import { Responsive, WidthProvider, type Layout } from "react-grid-layout";
 import { useSelector, useDispatch } from "react-redux";
-import type { RootState } from "@/redux/store";
 import { updateLayout, selectWidget } from "@/redux/widgetsSlice";
 import ChartWidget from "../widgets/ChartWidget";
 import TableWidget from "../widgets/TableWidget";
 import { Card, CardContent } from "@/components/ui/card";
+import type { RootState } from "@/redux/store";
 
 import "react-grid-layout/css/styles.css";
 import "react-resizable/css/styles.css";
 
 const ResponsiveGridLayout = WidthProvider(Responsive);
 
-const Canvas = () => {
-  const dispatch = useDispatch();
+export default function Canvas() {
+  const containerRef = useRef<HTMLDivElement>(null); // 👈 add this
   const widgets = useSelector((state: RootState) => state.widgets.widgets);
+  const layouts = useSelector((state: RootState) => state.widgets.layouts);
+  const selectedWidgetId = useSelector((state: RootState) => state.widgets.selectedWidgetId);
+  const dispatch = useDispatch();
 
   const handleLayoutChange = (currentLayout: Layout[]) => {
     dispatch(updateLayout(currentLayout));
   };
 
-  const layouts = {
-    lg: widgets.map((widget) => ({
-      ...widget.layout,
-      i: widget.id,
-      minW: 3,
-      minH: 5,
-    })),
-  };
-
   return (
-    <div className="flex-1 bg-muted p-6 overflow-auto">
+    <div
+      id="dashboard-canvas"
+      ref={containerRef}
+      className="p-4 bg-white dark:bg-black"
+    >
       <ResponsiveGridLayout
         className="layout"
         layouts={layouts}
-        breakpoints={{ lg: 1200 }}
-        cols={{ lg: 12 }}
-        rowHeight={40} // increased from 30 → 40
-        isDraggable
-        isResizable
         onLayoutChange={handleLayoutChange}
-        measureBeforeMount
+        breakpoints={{ lg: 1200, md: 996, sm: 768, xs: 480 }}
+        cols={{ lg: 12, md: 10, sm: 6, xs: 4 }}
+        rowHeight={30}
+        margin={[20, 20]}
+        isResizable
+        isDraggable
         useCSSTransforms
-        compactType="vertical"
-        preventCollision={false}
-        margin={[16, 16]}
-        containerPadding={[16, 16]}
+        compactType={null}
       >
         {widgets.map((widget) => (
-          <div
-            key={widget.id}
-            data-grid={{ ...widget.layout, minW: 3, minH: 5 }}
-            onClick={() => dispatch(selectWidget(widget.id))}
-          >
-            <Card className="w-full h-full rounded-xl border border-border bg-white shadow-sm hover:shadow-md transition-all">
-              <CardContent className="p-4 h-full flex flex-col justify-between overflow-hidden">
+          <div key={widget.id} data-grid={widget.layout}>
+            <Card
+              className="w-full h-full overflow-visible relative cursor-pointer"
+              onClick={() => dispatch(selectWidget(widget.id))}
+              onContextMenu={(e) => e.preventDefault()}
+            >
+              <CardContent className="w-full h-full p-4">
                 {widget.type === "chart" ? (
                   <ChartWidget widget={widget} />
                 ) : widget.type === "table" ? (
                   <TableWidget widget={widget} />
-                ) : (
-                  <div className="text-sm text-gray-500">Unknown widget type</div>
-                )}
+                ) : null}
               </CardContent>
             </Card>
           </div>
@@ -69,6 +63,4 @@ const Canvas = () => {
       </ResponsiveGridLayout>
     </div>
   );
-};
-
-export default Canvas;
+}
