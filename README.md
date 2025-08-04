@@ -67,9 +67,12 @@ You can easily plug in these features without rewriting core logic.
 
 ---
 
-## 📸 Image Preview
+## 🖼️ Project Screenshot
 
-> The UI is inspired by modern SaaS dashboard tools. A image of the UI:
+Here's a preview of the Dashboard Builder interface:
+
+![Dashboard Screenshot](assets/SS.png)
+
 
 
 🟢 The goal was to replicate a simplified version of professional dashboards using modern tooling in a short time.
