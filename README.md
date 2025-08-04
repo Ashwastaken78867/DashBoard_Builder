@@ -67,11 +67,12 @@ You can easily plug in these features without rewriting core logic.
 
 ---
 
-## 🖼️ Project Screenshot
+## 🖼️ Dashboard Preview
 
-Here's a preview of the Dashboard Builder interface:
+Here's a quick look at the Dashboard Builder in action:
 
-![Dashboard Screenshot](src/assets/SS 2.png)
+![Dashboard Screenshot](src/assets/SS2.png)
+
 
 
 
