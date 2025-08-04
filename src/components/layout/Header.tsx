@@ -1,14 +1,11 @@
 // src/components/layout/Header.tsx
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
 import { Moon, Sun } from "lucide-react";
 import domtoimage from "dom-to-image-more";
-import { useState } from "react";
 import { useTheme } from "next-themes";
 
 const Header = () => {
   const { theme, setTheme } = useTheme();
-  const [searchValue, setSearchValue] = useState("");
 
   const handleExportPNG = async () => {
     const canvasEl = document.getElementById("dashboard-canvas");
@@ -55,13 +52,13 @@ const Header = () => {
       </div>
 
       <div className="flex items-center gap-3">
-        <Input
+        {/* <Input
           type="text"
           placeholder="Search widgets..."
           value={searchValue}
           onChange={(e) => setSearchValue(e.target.value)}
           className="w-[200px]"
-        />
+        /> */}
 
         {/* Export Button */}
         <Button
